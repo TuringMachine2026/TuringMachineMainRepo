@@ -1,0 +1,4 @@
+int m = 10
+for (int i = 1000; i < 1010; i++){
+  print i
+}
