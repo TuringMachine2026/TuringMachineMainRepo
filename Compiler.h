@@ -39,7 +39,6 @@ private:
     return "q_auto_" + std::to_string(++stateCounter_);
   }
 
-  // Обновленный лексер с поддержкой "строк" и 'символов'
   std::vector<std::string> Tokenize(const std::string &line) {
     std::vector<std::string> tokens;
     std::string token;
@@ -248,7 +247,6 @@ private:
         std::string t_q = currentState + "_q";
         char zeroAddr = GetAddressFor("0");
 
-        // Умное деление: int / int -> float. Умножаем делимое на 100!
         if (destType == "float" && arg1Type != "float" && arg2Type != "float") {
           std::string t_mul = currentState + "_fmul";
           GenerateClear(tm_, currentState, mem_.GetAddress("_temp"),
@@ -305,7 +303,7 @@ public:
     try {
       mem_.Allocate("_c100", 100, 0);
     } catch (...) {
-    } // Константа 100 для float division
+    }
 
     for (const auto &line : sourceCode) {
       auto tokens = Tokenize(line);
@@ -489,7 +487,6 @@ public:
         auto hook = printHooks_[curr];
 
         if (hook.type == "string_literal") {
-          // Вывод сырого текста без кавычек
           std::cout << hook.internalName.substr(1,
                                                 hook.internalName.length() - 2)
                     << "\n";
