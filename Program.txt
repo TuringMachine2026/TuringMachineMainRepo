@@ -1,4 +1,9 @@
-int m = 10
-for (int i = 1000; i < 1010; i++){
-  print i
-}
+print "--- Магия деления ---"
+int a = 5
+int b = 3
+float result = a / b
+print result
+
+print "--- Символы ---"
+char letter = 'A'
+print letter
