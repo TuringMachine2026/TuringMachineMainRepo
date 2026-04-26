@@ -352,4 +352,4 @@ void GenerateAssign(TuringMachine &tm, const std::string &startState,
 
 #endif // MACROS_FOR_TURING
 
-// end
+//
